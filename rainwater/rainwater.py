@@ -3,6 +3,13 @@ from collections import defaultdict
 
 
 def trap(heightmap: List[int]) -> int:
+    """
+    This takes the heightmap and breaks it down into a series of lists, one
+    for each 'elevation'. Since there is only water trapped if it is between
+    two 'rocks', you can just look for any gaps between two 'rocks' at each
+    elevation to get the total water at each elevation, then sum to get the
+    total water in the 'map'
+    """
     # add class/self for testing on leetcode
     topo_lines = defaultdict(list)
     total_water = 0
