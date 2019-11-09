@@ -16,9 +16,18 @@ class TestMakeLL(unittest.TestCase):
 
 
 class TestAddNumbers(unittest.TestCase):
+    def setUp(self):
+        solution = add_numbers.Solution()
+        self.list_creator = solution.create_linked_list
+        self.adder = solution.addTwoNumbers
 
     def test_two_zeros(self):
-        pass
+        int_1 = 0
+        int_2 = 0
+        l1_head = self.list_creator(int_1)
+        l2_head = self.list_creator(int_2)
+        sum_head = self.adder(l1_head, l2_head)
+        self.assertEqual(0, sum_head.val)
 
 
 if __name__ == '__main__':
