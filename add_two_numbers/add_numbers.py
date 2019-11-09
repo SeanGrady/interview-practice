@@ -32,6 +32,5 @@ class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
         if l1.val == 0:
             return l2
-        if l2.val == 0:
+        elif l2.val == 0:
             return l1
-        
