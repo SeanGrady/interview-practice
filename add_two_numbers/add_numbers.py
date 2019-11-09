@@ -17,6 +17,18 @@ class Solution:
             prev_node = node
         return head
 
+    def linked_list_to_int(self, head: ListNode) -> int:
+        digit_list = []
+        digit_list.append(head.val)
+        current_digit = head
+        while current_digit.next:
+            current_digit = current_digit.next
+            digit_list.append(current_digit.val)
+
+        digit_list.reverse()
+        added = int("".join(map(str, digit_list)))
+        return added
+
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
         if l1.val == 0:
             return l2
