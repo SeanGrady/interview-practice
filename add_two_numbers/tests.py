@@ -9,7 +9,7 @@ class TestMakeLL(unittest.TestCase):
         self.number_creator = self.solution.linked_list_to_int
 
 
-    def test_make_long_number(self):
+    def test_int_to_list(self):
         number = 12345
         head_node = self.list_creator(number)
         self.assertEqual(head_node.val, 5)
@@ -20,6 +20,7 @@ class TestMakeLL(unittest.TestCase):
         self.assertEqual(head_node.next.next.next.next.next, None)
 
     def test_list_to_int(self):
+        # Look ma, no bootstraps!
         number = 2318473
         number_list = self.list_creator(number)
         recovered_number = self.number_creator(number_list)
