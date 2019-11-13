@@ -49,10 +49,60 @@ class TestAddNumbers(unittest.TestCase):
         sum_int = self.number_creator(sum_head)
         self.assertEqual(answer, sum_int)
 
+    def test_one_zero(self):
+        int_1 = 0
+        int_2 = 15
+        answer = 15
+        l1_head = self.list_creator(int_1)
+        l2_head = self.list_creator(int_2)
+        sum_head = self.adder(l1_head, l2_head)
+        sum_int = self.number_creator(sum_head)
+        self.assertEqual(answer, sum_int)
+
     def test_single_digits(self):
         int_1 = 5
         int_2 = 3
         answer = 8
+        head_1 = self.list_creator(int_1)
+        head_2 = self.list_creator(int_2)
+        sum_head = self.adder(head_1, head_2)
+        sum_int = self.number_creator(sum_head)
+        self.assertEqual(answer, sum_int)
+
+    def test_double_digits(self):
+        int_1 = 25
+        int_2 = 13
+        answer = 38
+        head_1 = self.list_creator(int_1)
+        head_2 = self.list_creator(int_2)
+        sum_head = self.adder(head_1, head_2)
+        sum_int = self.number_creator(sum_head)
+        self.assertEqual(answer, sum_int)
+
+    def test_double_digits_carry(self):
+        int_1 = 28
+        int_2 = 17
+        answer = 45
+        head_1 = self.list_creator(int_1)
+        head_2 = self.list_creator(int_2)
+        sum_head = self.adder(head_1, head_2)
+        sum_int = self.number_creator(sum_head)
+        self.assertEqual(answer, sum_int)
+
+    def test_uneven_top(self):
+        int_1 = 29473
+        int_2 = 3482
+        answer = 32955
+        head_1 = self.list_creator(int_1)
+        head_2 = self.list_creator(int_2)
+        sum_head = self.adder(head_1, head_2)
+        sum_int = self.number_creator(sum_head)
+        self.assertEqual(answer, sum_int)
+
+    def test_uneven_bottom(self):
+        int_1 = 293
+        int_2 = 348293
+        answer = 348586
         head_1 = self.list_creator(int_1)
         head_2 = self.list_creator(int_2)
         sum_head = self.adder(head_1, head_2)
